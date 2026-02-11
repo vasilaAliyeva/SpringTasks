@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DependencyInjectionExampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DependencyInjectionExampleApplication.class, args);
+//        SpringApplication.run(DependencyInjectionExampleApplication.class, args);
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 

@@ -2,6 +2,7 @@ package az.edu.ada.wm2.dependency_injection_example.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,31 +12,24 @@ public class Order {
 
     private String id;
 
-    @Autowired
-    @Qualifier("personBean")
     private Person owner;
 
-    @Autowired
+    @Autowired(required = false)
     private List<Product> products;
 
+    @Value("0.0")
     private Double total;
 
-    public Order() {}
-
-    public Order(String id, Person owner, List<Product> products, Double total) {
-        this.id = id;
+    @Autowired
+    public Order(@Qualifier("personBean") Person owner) {
         this.owner = owner;
-        this.products = products;
-        this.total = total;
-
     }
     public void setId(String id) {
 
         this.id = id;
     }
-    public void setOwner(Person owner) {
-        this.owner = owner;
-    }
+
+    @Autowired
     public void setProducts(List<Product> products) {
         this.products = products;
     }
