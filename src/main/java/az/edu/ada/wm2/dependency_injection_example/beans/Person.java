@@ -1,5 +1,9 @@
 package az.edu.ada.wm2.dependency_injection_example.beans;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
     private String id;
     private String firstName;
@@ -42,4 +46,3 @@ public class Person {
                 '}';
     }
 }
-

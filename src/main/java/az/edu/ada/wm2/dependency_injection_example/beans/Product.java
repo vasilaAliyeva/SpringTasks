@@ -1,5 +1,8 @@
 package az.edu.ada.wm2.dependency_injection_example.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Product {
 
     private String id;
@@ -27,6 +30,11 @@ public class Product {
         return price;
     }
 
+    public Product(String id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
     @Override
     public String toString() {
         return "Product{" +
